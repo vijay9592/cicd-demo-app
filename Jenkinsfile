@@ -26,11 +26,10 @@ pipeline {
                 withSonarQubeEnv('sonarqube') {
                     sh '''
                     sonar-scanner \
-                    -Dsonar.projectKey=cicd-demo \
-                    -Dsonar.sources=. \
-                    -Dsonar.host.url=http://localhost:9000 \
-                    -Dsonar.login=$SONAR_AUTH_TOKEN
-                    '''
+  -Dsonar.projectKey=cicd-demo-app \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://3.109.48.132:9000 \
+  -Dsonar.login=sqp_a3f06f36802d55dc4694a6a3ae53bae35df5086c
                 }
             }
         }
