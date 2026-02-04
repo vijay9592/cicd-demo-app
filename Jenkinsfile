@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "dockerhubusername/cicd-demo"
+        IMAGE_NAME = "vijay9592/cicd-demo-app"
     }
 
     stages {
@@ -57,8 +57,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                docker rm -f cicd-demo || true
-                docker run -d --name cicd-demo $IMAGE_NAME
+                docker rm -f cicd-demo-app || true
+                docker run -d --name cicd-demo-app $IMAGE_NAME
                 '''
             }
         }
